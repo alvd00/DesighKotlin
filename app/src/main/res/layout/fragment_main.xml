@@ -6,11 +6,10 @@
     android:layout_height="match_parent">
 
     <com.example.desighkotlin.utils.CustomImageView
+        android:id="@+id/custom_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-
-        />
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/ic_wikipedia" />
 
 </FrameLayout>

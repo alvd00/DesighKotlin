@@ -31,12 +31,15 @@ class PODViewModel(private val liveDataToObserve:MutableLiveData<PODData> = Muta
                         response: Response<PODServerResponseData>
                     ) {
                         if(response.isSuccessful && response.body()!=null){
-                            liveDataToObserve.postValue(PODData.Loading())
+                            liveDataToObserve.postValue(PODData.Success(response.body() as PODServerResponseData)) // FIXME костыль
+                        }
+                        else{
+                            //HW
                         }
                     }
 
                     override fun onFailure(call: Call<PODServerResponseData>, t: Throwable) {
-                        TODO("Not yet implemented")
+                        //TODO HW2
                     }
                 }
             )
