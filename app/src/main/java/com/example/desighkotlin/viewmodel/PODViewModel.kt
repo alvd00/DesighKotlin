@@ -1,5 +1,9 @@
 package com.example.desighkotlin.viewmodel
 
+import android.content.Context
+import android.util.Log
+import android.view.ContextMenu
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,6 +13,7 @@ import com.example.desighkotlin.repository.PODServerResponseData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.coroutines.coroutineContext
 
 class PODViewModel(private val liveDataToObserve:MutableLiveData<PODData> = MutableLiveData(),
 
@@ -34,12 +39,14 @@ class PODViewModel(private val liveDataToObserve:MutableLiveData<PODData> = Muta
                             liveDataToObserve.postValue(PODData.Success(response.body() as PODServerResponseData)) // FIXME костыль
                         }
                         else{
-                            //HW
+
+                            Log.d("TAGGG", "EEEEER")
+                             //HW
                         }
                     }
 
                     override fun onFailure(call: Call<PODServerResponseData>, t: Throwable) {
-                        //TODO HW2
+                    //TODO HW2
                     }
                 }
             )

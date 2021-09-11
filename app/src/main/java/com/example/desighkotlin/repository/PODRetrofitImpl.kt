@@ -9,15 +9,15 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 
 class PODRetrofitImpl {
-    private val baseUrl = "https://api.nasa.gov/"
+    private val baseUrl = "https://api.nasa.gov"
 
     fun getRetrofitImpl() : PODAPI{
         return Retrofit.Builder().baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
-           // .client(createOkHttpClient(PODInterceptor()))//FIXME mina
+           // .client(createOkHttpClient(PODInterceptor()))//
             .build().create(PODAPI::class.java)
     }
-
+/*
     private fun createOkHttpClient(interceptor: Interceptor): OkHttpClient {
         val httpClient = OkHttpClient.Builder()
         httpClient.addInterceptor(interceptor)
@@ -32,6 +32,6 @@ class PODRetrofitImpl {
         override fun intercept(chain: Interceptor.Chain): okhttp3.Response {
             return chain.proceed(chain.request())
         }
-    }
+    }*/
 
 }
