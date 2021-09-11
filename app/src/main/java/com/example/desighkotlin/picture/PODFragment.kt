@@ -56,7 +56,7 @@ class PODFragment : Fragment() {
         }
 
         bottomSheetBehavior = BottomSheetBehavior.from(binding.includeLayout.bottomSheetContainer)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
 
     /*
         bottomSheetBehavior.addBottomSheetCallback(
