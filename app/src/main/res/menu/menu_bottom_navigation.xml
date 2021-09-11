@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/favorite_one"
+            android:icon="@drawable/ic_favourite_menu"
+            android:title="@string/favourite" />
+        <item
+            android:id="@+id/settings_one"
+            android:icon="@drawable/ic_settings_menu"
+            android:title="@string/settings" />
+    </group>
+
+</menu>
