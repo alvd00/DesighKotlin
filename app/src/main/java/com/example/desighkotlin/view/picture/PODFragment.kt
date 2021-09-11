@@ -49,7 +49,7 @@ class PODFragment : Fragment() {
 
         super.onCreate(savedInstanceState)
         setActionBar()
-        binding.scrollMainFragment.setOnScrollChangeListener{it,y,u,i,o->
+        binding.scrollMainFragment.setOnScrollChangeListener { it, y, u, i, o ->
             binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
         }
 
@@ -102,38 +102,13 @@ class PODFragment : Fragment() {
                     Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
             }
             )
-
         }
-
         bottomSheetBehavior = BottomSheetBehavior.from(binding.includeLayout.bottomSheetContainer)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
 
-        /*
-            bottomSheetBehavior.addBottomSheetCallback(
-
-                object :
-                    BottomSheetBehavior.BottomSheetCallback() {
-                    override fun onStateChanged(bottomSheet: View, newState: Int) {
-                        when (newState) {
-                            BottomSheetBehavior.STATE_DRAGGING -> TODO("not implemented")
-                            BottomSheetBehavior.STATE_COLLAPSED -> TODO("not implemented")
-                            BottomSheetBehavior.STATE_EXPANDED -> TODO("not implemented")
-                            BottomSheetBehavior.STATE_HALF_EXPANDED -> TODO("not implemented")
-                            BottomSheetBehavior.STATE_HIDDEN -> TODO("not implemented")
-                            BottomSheetBehavior.STATE_SETTLING -> TODO("not implemented")
-                        }
-                    }
-
-                    override fun onSlide(bottomSheet: View, slideOffset: Float) {
-                        TODO("not implemented")
-                    }
-                }
-
-            )*/
     }
 
     private fun renderData(data: PODData) {
-
         when (data) {
             is PODData.Success -> {
                 binding.customView.load(data.serverResponseData.url) {
@@ -148,7 +123,6 @@ class PODFragment : Fragment() {
             is PODData.Error -> {
                 Toast.makeText(context, ERROR_TEXT, Toast.LENGTH_LONG).show()
             }
-
         }
     }
 
@@ -167,17 +141,21 @@ class PODFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-
         when (item.itemId) {
             R.id.app_bar_fav -> {
                 Toast.makeText(context, FAVORITE, Toast.LENGTH_SHORT).show()
             }
 
-            R.id.app_bar_settings -> {requireActivity().supportFragmentManager.beginTransaction().replace(R.id.container, ChipsFragment.newInstance()).addToBackStack("").commit()}
+            R.id.app_bar_settings -> {
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, ChipsFragment.newInstance()).addToBackStack("")
+                    .commit()
+            }
+
             android.R.id.home -> {
 
-                BottomNavigationDrawerFragment.newInstance().show(requireActivity().supportFragmentManager, "")
+                BottomNavigationDrawerFragment.newInstance()
+                    .show(requireActivity().supportFragmentManager, "")
             }
         }
         return super.onOptionsItemSelected(item)
