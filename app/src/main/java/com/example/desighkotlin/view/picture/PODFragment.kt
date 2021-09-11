@@ -1,12 +1,10 @@
-package com.example.desighkotlin.picture
+package com.example.desighkotlin.view.picture
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.Toast
-import androidx.annotation.MainThread
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -20,9 +18,9 @@ import com.example.desighkotlin.utils.FAVORITE
 import com.example.desighkotlin.utils.LOADING_TEXT
 import com.example.desighkotlin.utils.SETTINGS
 import com.example.desighkotlin.view.MainActivity
+import com.example.desighkotlin.view.chips.ChipsFragment
 import com.example.desighkotlin.viewmodel.PODData
 import com.example.desighkotlin.viewmodel.PODViewModel
-import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
@@ -51,6 +49,9 @@ class PODFragment : Fragment() {
 
         super.onCreate(savedInstanceState)
         setActionBar()
+        binding.scrollMainFragment.setOnScrollChangeListener{it,y,u,i,o->
+            binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
+        }
 
         return binding.root
     }
@@ -138,6 +139,8 @@ class PODFragment : Fragment() {
                 binding.customView.load(data.serverResponseData.url) {
                     error(R.drawable.ic_load_error_vector)
                 }
+                binding.descriptionPhoto.setText(data.serverResponseData.explanation)
+
             }
             is PODData.Loading -> {
                 Toast.makeText(context, LOADING_TEXT, Toast.LENGTH_LONG).show()
@@ -171,10 +174,7 @@ class PODFragment : Fragment() {
                 Toast.makeText(context, FAVORITE, Toast.LENGTH_SHORT).show()
             }
 
-            R.id.app_bar_settings -> {
-                Toast.makeText(context, SETTINGS, Toast.LENGTH_SHORT).show()
-            }
-
+            R.id.app_bar_settings -> {requireActivity().supportFragmentManager.beginTransaction().replace(R.id.container, ChipsFragment.newInstance()).addToBackStack("").commit()}
             android.R.id.home -> {
 
                 BottomNavigationDrawerFragment.newInstance().show(requireActivity().supportFragmentManager, "")

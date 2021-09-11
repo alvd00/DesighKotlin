@@ -1,4 +1,4 @@
-package com.example.desighkotlin.picture
+package com.example.desighkotlin.view.picture
 
 import android.os.Bundle
 import android.util.Log
@@ -9,7 +9,6 @@ import android.widget.Toast
 import com.example.desighkotlin.R
 import com.example.desighkotlin.databinding.BottomNavigationLayoutBinding
 import com.example.desighkotlin.utils.FAVORITE
-import com.example.desighkotlin.utils.LOADING_TEXT
 import com.example.desighkotlin.utils.SETTINGS
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
