@@ -17,6 +17,7 @@
         android:layout_marginEnd="@dimen/endMarginRowContent"
         android:orientation="horizontal">
 
+
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabsSnake"
             android:layout_width="match_parent"

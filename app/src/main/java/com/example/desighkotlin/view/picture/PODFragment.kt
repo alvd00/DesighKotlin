@@ -1,9 +1,13 @@
 package com.example.desighkotlin.view.picture
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
+import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
@@ -56,6 +60,7 @@ class PODFragment : Fragment() {
     }
 
     private var isMain = true
+    @SuppressLint("ResourceAsColor")
     private fun setActionBar() {
 
         (context as MainActivity).setSupportActionBar(binding.bottomAppBar)
@@ -89,12 +94,20 @@ class PODFragment : Fragment() {
                 binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
             }
         }
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getLiveData().observe(viewLifecycleOwner, Observer { renderData(it) })
         viewModel.sendServerRequest()
+
+//Непонятно, как через темы сделать
+        binding.changeTheme.setOnClickListener {
+            binding.mainFragment.setStatusBarBackgroundResource(R.drawable.universe)
+        }
+
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data =
@@ -139,6 +152,8 @@ class PODFragment : Fragment() {
         inflater.inflate(R.menu.menu_bottom_bar, menu)
     }
 
+
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.app_bar_fav -> {
@@ -150,12 +165,12 @@ class PODFragment : Fragment() {
                     .replace(R.id.main_container, SettingsFragment.newInstance()).addToBackStack(null)
                     .commit()
             }
-
             android.R.id.home -> {
 
                 BottomNavigationDrawerFragment.newInstance()
                     .show(requireActivity().supportFragmentManager, "")
             }
+
         }
         return super.onOptionsItemSelected(item)
     }

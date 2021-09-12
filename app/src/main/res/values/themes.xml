@@ -10,7 +10,8 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor"
+            tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
 
@@ -36,8 +37,11 @@
         <item name="myOutlineColor">@color/MyColorOne</item>
     </style>
 
-    <style name="Theme.DesighKotlin.myTheme">
+    <style name="Theme.DesighKotlin.myTheme" parent="Theme.DesighKotlin">
+
+        <item name="cornerRadius">30dp</item>
+        <item name="background">@drawable/universe</item>
         <item name="boxStrokeColor">@color/light_blue</item>
-        <item name="fontFamily">@font/roboto_ligth</item>
+        <item name="fontFamily">@font/italic_variable_font_wght</item>
     </style>
 </resources>
