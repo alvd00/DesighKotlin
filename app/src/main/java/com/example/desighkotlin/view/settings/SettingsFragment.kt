@@ -1,7 +1,6 @@
 package com.example.desighkotlin.view.settings
 
 import android.graphics.Typeface
-import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -36,9 +35,6 @@ class SettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-
 
         binding.includeChips.chipGroup.setOnCheckedChangeListener { childGroup, position ->
             Toast.makeText(context, "Click $position", Toast.LENGTH_SHORT).show()

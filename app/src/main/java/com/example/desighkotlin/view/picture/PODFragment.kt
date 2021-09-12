@@ -1,6 +1,7 @@
 package com.example.desighkotlin.view.picture
 
 import android.annotation.SuppressLint
+import android.app.Application
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.net.Uri
@@ -103,10 +104,12 @@ class PODFragment : Fragment() {
         viewModel.getLiveData().observe(viewLifecycleOwner, Observer { renderData(it) })
         viewModel.sendServerRequest()
 
-//Непонятно, как через темы сделать
-        binding.changeTheme.setOnClickListener {
-            binding.mainFragment.setStatusBarBackgroundResource(R.drawable.universe)
-        }
+/*Рабочая тема, но только фон меняет, в mainActivity пытался поменять тему, но неудачно. Как ее поменять в фрагменте также пока не разобрался(
+      binding.changeTheme.setOnClickListener {
+          android.Manifest.
+          binding.main.setBackgroundResource(R.drawable.universe)
+      }*/
+
 
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
