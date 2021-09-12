@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/includeChips"
+        layout="@layout/include_chips" />
+
+    <LinearLayout
+        android:id="@+id/secondRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/startMarginRowContent"
+        android:layout_marginTop="@dimen/topMarginRowContent"
+        android:layout_marginEnd="@dimen/endMarginRowContent"
+        android:orientation="horizontal">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabsSnake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/startMarginRowContent"
+            android:layout_marginTop="@dimen/topMarginRowContent"
+            android:layout_marginEnd="@dimen/endMarginRowContent">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tab 1" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tab 2" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tab 3" />
+        </com.google.android.material.tabs.TabLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/startMarginRowContent"
+        android:layout_marginTop="@dimen/topMarginRowContent"
+        android:layout_marginEnd="@dimen/endMarginRowContent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button"
+
+            android:text="default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:insetLeft="10dp"
+            android:text="outlined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:insetLeft="10dp"
+            android:text="outlined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/startMarginRowContent"
+        android:layout_marginTop="@dimen/topMarginRowContent"
+        android:layout_marginEnd="@dimen/endMarginRowContent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:text="Unelevated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:text="Unelevated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+            android:text="Unelevated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/startMarginRowContent"
+        android:layout_marginTop="@dimen/topMarginRowContent"
+        android:layout_marginEnd="@dimen/endMarginRowContent"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
+            android:layout_margin="20dp"
+            app:cardElevation="20dp"
+            app:cardCornerRadius="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/startMarginRowContent"
+        android:layout_marginTop="@dimen/topMarginRowContent"
+        android:layout_marginBottom="@dimen/topMarginRowContent"
+        android:layout_marginEnd="@dimen/endMarginRowContent"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:menu="@menu/menu_bottom_navigation"/>
+    </LinearLayout>
+
+</LinearLayout>

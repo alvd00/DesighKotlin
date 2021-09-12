@@ -16,9 +16,8 @@ import com.example.desighkotlin.databinding.FragmentMainBinding
 import com.example.desighkotlin.utils.ERROR_TEXT
 import com.example.desighkotlin.utils.FAVORITE
 import com.example.desighkotlin.utils.LOADING_TEXT
-import com.example.desighkotlin.utils.SETTINGS
 import com.example.desighkotlin.view.MainActivity
-import com.example.desighkotlin.view.chips.ChipsFragment
+import com.example.desighkotlin.view.settings.SettingsFragment
 import com.example.desighkotlin.viewmodel.PODData
 import com.example.desighkotlin.viewmodel.PODViewModel
 import com.google.android.material.bottomappbar.BottomAppBar
@@ -148,7 +147,7 @@ class PODFragment : Fragment() {
 
             R.id.app_bar_settings -> {
                 requireActivity().supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, ChipsFragment.newInstance()).addToBackStack("")
+                    .replace(R.id.main_container, SettingsFragment.newInstance()).addToBackStack(null)
                     .commit()
             }
 

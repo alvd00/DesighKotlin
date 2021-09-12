@@ -21,6 +21,7 @@
         <item name="counterOverflowTextColor">@color/black</item>
         <item name="endIconMode">custom</item>
         <item name="endIconDrawable">@drawable/ic_wikipedia</item>
+        <item name="textInputStyle">@style/CustomOutlinedBox.</item>
     </style>
     
     <style name="CustomOutlinedBox." parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -28,8 +29,15 @@
         <item name="counterEnabled">true</item>
         <item name="counterMaxLength">5</item>
         <item name="boxStrokeErrorColor">@color/colorAccent</item>
+        <item name="boxStrokeColor">@color/light_blue</item>
         <item name="cornerRadius">20dp</item>
         <item name="endIconMode">custom</item>
         <item name="endIconDrawable">@drawable/ic_wikipedia</item>
+        <item name="myOutlineColor">@color/MyColorOne</item>
+    </style>
+
+    <style name="Theme.DesighKotlin.myTheme">
+        <item name="boxStrokeColor">@color/light_blue</item>
+        <item name="fontFamily">@font/roboto_ligth</item>
     </style>
 </resources>
