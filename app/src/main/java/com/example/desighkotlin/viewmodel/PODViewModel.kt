@@ -44,9 +44,8 @@ class PODViewModel(private val liveDataToObserve:MutableLiveData<PODData> = Muta
                              //HW
                         }
                     }
-
                     override fun onFailure(call: Call<PODServerResponseData>, t: Throwable) {
-                    //TODO HW2
+                        //TODO
                     }
                 }
             )

@@ -9,6 +9,5 @@ const val API_KEY = BuildConfig.NASA_API_KEY
 
 interface PODAPI {
     @GET("planetary/apod")
-
     fun getPOD(@Query("api_key") apiKey : String) : Call<PODServerResponseData>
 }

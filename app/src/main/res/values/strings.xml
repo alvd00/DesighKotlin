@@ -7,5 +7,9 @@
     <string name="favourite">favourite</string>
     <string name="settings">settings</string>
     <string name="search">Search</string>
+    <string name="label_inside_activity">Выберете тему</string>
+    <string name="theme_one">First</string>
+    <string name="theme_second">Second</string>
+    <string name="label_inside_fragment">Выберете тему</string>
 
 </resources>

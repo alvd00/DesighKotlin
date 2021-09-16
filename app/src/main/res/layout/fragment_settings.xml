@@ -138,4 +138,32 @@
             app:menu="@menu/menu_bottom_navigation"/>
     </LinearLayout>
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_inside_fragment"
+        android:textSize="@dimen/labelTextSize" />
+
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/btnThemeOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/theme_one" />
+
+            <RadioButton
+                android:id="@+id/btnThemeSecond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/theme_second" />
+        </RadioGroup>
+
 </LinearLayout>

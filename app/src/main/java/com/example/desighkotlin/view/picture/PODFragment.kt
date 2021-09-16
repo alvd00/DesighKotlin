@@ -1,14 +1,10 @@
 package com.example.desighkotlin.view.picture
 
 import android.annotation.SuppressLint
-import android.app.Application
 import android.content.Intent
-import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
-import android.widget.Button
-import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
@@ -30,8 +26,6 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 
 class PODFragment : Fragment() {
-
-
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
     private var _binding: FragmentMainBinding? = null
@@ -61,9 +55,9 @@ class PODFragment : Fragment() {
     }
 
     private var isMain = true
+
     @SuppressLint("ResourceAsColor")
     private fun setActionBar() {
-
         (context as MainActivity).setSupportActionBar(binding.bottomAppBar)
         setHasOptionsMenu(true)
         binding.fab.setOnClickListener {
@@ -95,8 +89,6 @@ class PODFragment : Fragment() {
                 binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
             }
         }
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -110,7 +102,6 @@ class PODFragment : Fragment() {
           binding.main.setBackgroundResource(R.drawable.universe)
       }*/
 
-
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data =
@@ -120,7 +111,6 @@ class PODFragment : Fragment() {
         }
         bottomSheetBehavior = BottomSheetBehavior.from(binding.includeLayout.bottomSheetContainer)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
-
     }
 
     private fun renderData(data: PODData) {
@@ -130,7 +120,6 @@ class PODFragment : Fragment() {
                     error(R.drawable.ic_load_error_vector)
                 }
                 binding.descriptionPhoto.setText(data.serverResponseData.explanation)
-
             }
             is PODData.Loading -> {
                 Toast.makeText(context, LOADING_TEXT, Toast.LENGTH_LONG).show()
@@ -156,7 +145,6 @@ class PODFragment : Fragment() {
     }
 
 
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.app_bar_fav -> {
@@ -165,17 +153,18 @@ class PODFragment : Fragment() {
 
             R.id.app_bar_settings -> {
                 requireActivity().supportFragmentManager.beginTransaction()
-                    .replace(R.id.main_container, SettingsFragment.newInstance()).addToBackStack(null)
+                    .replace(R.id.main_container, SettingsFragment.newInstance())
+                    .addToBackStack(null)
                     .commit()
             }
             android.R.id.home -> {
-
                 BottomNavigationDrawerFragment.newInstance()
                     .show(requireActivity().supportFragmentManager, "")
             }
-
         }
         return super.onOptionsItemSelected(item)
     }
+
+
 
 }

@@ -1,38 +1,42 @@
 package com.example.desighkotlin.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.ContextThemeWrapper
-import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import com.example.desighkotlin.R
 import com.example.desighkotlin.view.picture.PODFragment
 
+
+const val ThemeOne = 1
+const val ThemeSecond = 2
 class MainActivity : AppCompatActivity() {
+
+    private val KEY_SP = "sp"
+    private val KEY_CURRENT_THEME = "current_theme"
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val changeTheme =findViewById<Button>(R.id.changeTheme)
-        changeTheme.setOnClickListener {
-            showPopup(it)
-
-
-
-        if (savedInstanceState == null){
-            supportFragmentManager.beginTransaction().replace(R.id.main_container, PODFragment.newInstance()).commit()
-        }
-
-    }
-    }
-    private fun showPopup(view: View){ //создание меню
-        var them = 1
-        if (them==1){
-            them=2
-            getApplication().setTheme(R.style.Theme_DesighKotlin_myTheme)
-        }
-        else if(them==2){
-            them = 1
-            getApplication().setTheme(R.style.ThemeOverlay_AppCompat_DayNight)
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.main_container, PODFragment.newInstance()).commit()
         }
     }
+
+
+    fun getCurrentTheme(): Int {
+        val sharedPreferences = getSharedPreferences(KEY_SP, MODE_PRIVATE)
+        return sharedPreferences.getInt(KEY_CURRENT_THEME, -1)
+    }
+
+
+    fun setCurrentTheme(currentTheme: Int) {
+        val sharedPreferences = getSharedPreferences(KEY_SP, MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putInt(KEY_CURRENT_THEME, currentTheme)
+        editor.apply()
+    }
+
+
 }

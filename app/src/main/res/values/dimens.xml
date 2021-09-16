@@ -3,5 +3,6 @@
     <dimen name="topMarginRowContent">16dp</dimen>
     <dimen name="startMarginRowContent">16dp</dimen>
     <dimen name="endMarginRowContent">16dp</dimen>
+    <dimen name="labelTextSize">16sp</dimen>
 
 </resources>
