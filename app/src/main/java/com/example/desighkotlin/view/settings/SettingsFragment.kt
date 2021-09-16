@@ -85,9 +85,8 @@ class SettingsFragment : Fragment(), View.OnClickListener {
         binding.btnThemeSecond.setOnClickListener(this)
         when (parentActivity.getCurrentTheme()) {
             1 -> binding.radioGroup.check(R.id.btnThemeOne)
-            2 ->  binding.radioGroup.check(R.id.btnThemeSecond)
+            2 -> binding.radioGroup.check(R.id.btnThemeSecond)
         }
-
 
 
         //depr
@@ -107,7 +106,6 @@ class SettingsFragment : Fragment(), View.OnClickListener {
     }
 
 
-
     override fun onClick(v: View) {
         when (v.id) {
             R.id.btnThemeOne -> {
@@ -121,8 +119,6 @@ class SettingsFragment : Fragment(), View.OnClickListener {
         }
 
     }
-
-
 
 
     companion object {
