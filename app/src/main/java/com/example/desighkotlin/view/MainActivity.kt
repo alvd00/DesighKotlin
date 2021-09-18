@@ -15,10 +15,19 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(getRealStyle(getCurrentTheme()))
         setContentView(R.layout.activity_main)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.main_container, PODFragment.newInstance()).commit()
+        }
+    }
+
+    private fun getRealStyle(currentTheme: Int): Int {
+        return when (currentTheme) {
+            ThemeOne -> R.style.Theme_DesighKotlin_myTheme
+            ThemeSecond -> R.style.ThemeOverlay_AppCompat
+            else -> 0
         }
     }
 

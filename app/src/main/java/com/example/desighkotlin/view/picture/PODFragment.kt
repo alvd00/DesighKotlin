@@ -118,11 +118,14 @@ class PODFragment : Fragment() {
             is PODData.Success -> {
                 binding.customView.load(data.serverResponseData.url) {
                     error(R.drawable.ic_load_error_vector)
+                    placeholder(R.drawable.progress_image_animation)
                 }
                 binding.descriptionPhoto.setText(data.serverResponseData.explanation)
             }
             is PODData.Loading -> {
-                Toast.makeText(context, LOADING_TEXT, Toast.LENGTH_LONG).show()
+                binding.customView.load(R.drawable.progress_image_animation){
+                    error(R.drawable.ic_load_error_vector)
+                }
             }
             is PODData.Error -> {
                 Toast.makeText(context, ERROR_TEXT, Toast.LENGTH_LONG).show()
