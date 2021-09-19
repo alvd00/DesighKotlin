@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     private fun getRealStyle(currentTheme: Int): Int {
         return when (currentTheme) {
             ThemeOne -> R.style.Theme_DesighKotlin_myTheme
-            ThemeSecond -> R.style.ThemeOverlay_AppCompat
+            ThemeSecond -> R.style.ThemeOverlay_MaterialComponents_Dark
             else -> 0
         }
     }

@@ -52,7 +52,7 @@ class SettingsFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.includeChips.chipGroup.setOnCheckedChangeListener { childGroup, position ->
+      /*  binding.includeChips.chipGroup.setOnCheckedChangeListener { childGroup, position ->
             Toast.makeText(context, "Click $position", Toast.LENGTH_SHORT).show()
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 binding.includeChips.chipGroup.forEachIndexed { index, view ->
@@ -65,12 +65,12 @@ class SettingsFragment : Fragment(), View.OnClickListener {
         }
         binding.tabsSnake.getTabAt(0)?.apply {
             text = "Работает"
-        }
+        }*/
 
         //  переключатель фрагмент
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.app_bar_fav -> {
+                R.id.action_api_bottom_activity -> {
                     Toast.makeText(context, "Favorite", Toast.LENGTH_SHORT).show()
                 }
                 R.id.app_bar_settings -> {
@@ -92,7 +92,7 @@ class SettingsFragment : Fragment(), View.OnClickListener {
         //depr
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.app_bar_fav -> {
+                R.id.action_api_bottom_activity -> {
                     Toast.makeText(context, "Favorite", Toast.LENGTH_SHORT).show()
                     //Navigation().showFragment(FavoriteFragment.newInstance())
                 }

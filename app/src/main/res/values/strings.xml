@@ -11,5 +11,8 @@
     <string name="theme_one">First</string>
     <string name="theme_second">Second</string>
     <string name="label_inside_fragment">Выберете тему</string>
+    <string name="venus">Венера</string>
+    <string name="mars">Марс</string>
+    <string name="earth">Земля</string>
 
 </resources>

@@ -14,6 +14,8 @@ import androidx.lifecycle.ViewModelProvider
 import coil.api.load
 import com.example.desighkotlin.R
 import com.example.desighkotlin.databinding.FragmentMainBinding
+import com.example.desighkotlin.planets.APIBottomActivity
+import com.example.desighkotlin.planets.ApiActivity
 import com.example.desighkotlin.utils.ERROR_TEXT
 import com.example.desighkotlin.utils.FAVORITE
 import com.example.desighkotlin.utils.LOADING_TEXT
@@ -47,9 +49,9 @@ class PODFragment : Fragment() {
 
         super.onCreate(savedInstanceState)
         setActionBar()
-        binding.scrollMainFragment.setOnScrollChangeListener { it, y, u, i, o ->
+       /* binding.scroll.setOnScrollChangeListener { it, y, u, i, o ->
             binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
-        }
+        }*/
 
         return binding.root
     }
@@ -120,7 +122,7 @@ class PODFragment : Fragment() {
                     error(R.drawable.ic_load_error_vector)
                     placeholder(R.drawable.progress_image_animation)
                 }
-                binding.descriptionPhoto.setText(data.serverResponseData.explanation)
+//                binding.descriptionPhoto.setText(data.serverResponseData.explanation)
             }
             is PODData.Loading -> {
                 binding.customView.load(R.drawable.progress_image_animation){
@@ -150,15 +152,17 @@ class PODFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.app_bar_fav -> {
-                Toast.makeText(context, FAVORITE, Toast.LENGTH_SHORT).show()
+            R.id.action_api_activity -> {
+                Toast.makeText(context, "Favorite", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(context, ApiActivity::class.java))
             }
 
+            R.id.action_api_bottom_activity -> {
+                Toast.makeText(context, "Favorite", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(context, APIBottomActivity::class.java))
+            }
             R.id.app_bar_settings -> {
-                requireActivity().supportFragmentManager.beginTransaction()
-                    .replace(R.id.main_container, SettingsFragment.newInstance())
-                    .addToBackStack(null)
-                    .commit()
+                requireActivity().supportFragmentManager.beginTransaction().replace(R.id.main_container,SettingsFragment.newInstance()).addToBackStack("").commit()
             }
             android.R.id.home -> {
                 BottomNavigationDrawerFragment.newInstance()

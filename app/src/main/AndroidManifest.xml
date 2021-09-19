@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesighKotlin.myTheme">
         <activity
+            android:name=".planets.ApiActivity"
+            android:exported="true">
+
+        </activity>
+
+        <activity
+            android:name=".planets.APIBottomActivity$ApiBottomActivity"
+            android:exported="true">
+
+        </activity>
+
+        <activity
             android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
