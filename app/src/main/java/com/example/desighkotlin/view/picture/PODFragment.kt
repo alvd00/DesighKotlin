@@ -13,9 +13,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import coil.api.load
 import com.example.desighkotlin.R
-import com.example.desighkotlin.databinding.FragmentMainBinding
-import com.example.desighkotlin.planets.APIBottomActivity
+import com.example.desighkotlin.databinding.FragmentPodBinding
 import com.example.desighkotlin.planets.ApiActivity
+import com.example.desighkotlin.planets.ApiBottomActivity
 import com.example.desighkotlin.utils.ERROR_TEXT
 import com.example.desighkotlin.utils.FAVORITE
 import com.example.desighkotlin.utils.LOADING_TEXT
@@ -30,8 +30,8 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 class PODFragment : Fragment() {
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
-    private var _binding: FragmentMainBinding? = null
-    val binding: FragmentMainBinding
+    private var _binding: FragmentPodBinding? = null
+    val binding: FragmentPodBinding
         get() {
             return _binding!!
         }
@@ -45,13 +45,14 @@ class PODFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentMainBinding.inflate(inflater)
+        _binding = FragmentPodBinding.inflate(inflater)
 
         super.onCreate(savedInstanceState)
         setActionBar()
        /* binding.scroll.setOnScrollChangeListener { it, y, u, i, o ->
             binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
         }*/
+
 
         return binding.root
     }
@@ -159,7 +160,7 @@ class PODFragment : Fragment() {
 
             R.id.action_api_bottom_activity -> {
                 Toast.makeText(context, "Favorite", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(context, APIBottomActivity::class.java))
+                startActivity(Intent(context, ApiBottomActivity::class.java))
             }
             R.id.app_bar_settings -> {
                 requireActivity().supportFragmentManager.beginTransaction().replace(R.id.main_container,SettingsFragment.newInstance()).addToBackStack("").commit()

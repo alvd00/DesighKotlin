@@ -32,7 +32,7 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
         binding.navigationView.setNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.favorite_one ->{
-                    Toast.makeText(context, FAVORITE, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), FAVORITE, Toast.LENGTH_SHORT).show()
                 }
                 R.id.settings_one ->{
                     Log.d("SETTT", "YEEEES")
