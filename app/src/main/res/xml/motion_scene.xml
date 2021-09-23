@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</PreferenceScreen>
+    <Transition
+        app:constraintSetStart="@layout/fragment_pod_start"
+        app:constraintSetEnd="@layout/fragment_pod_end"
+        app:duration="1000">
+        <OnClick app:targetId="@+id/btnWiki"/>
+    </Transition>
+
+    <Transition
+        app:constraintSetEnd="@layout/fragment_pod_start"
+        app:constraintSetStart="@layout/fragment_pod_end"
+        app:duration="1000">
+        <OnClick app:targetId="@+id/image_view"/>
+    </Transition>
+
+</MotionScene>

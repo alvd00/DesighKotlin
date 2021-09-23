@@ -8,7 +8,8 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/main"
@@ -44,12 +45,51 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:scaleType="centerInside"
+                android:visibility="visible"
                 android:contentDescription="@string/photo_of_the_day_stub"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/song"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_no_photo_vector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="@string/song"
+                android:textSize="@dimen/labelTextSize"
+                android:id="@+id/song"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guidelineVerticalEnd"
+                app:layout_constraintStart_toEndOf="@id/guidelineVerticalStart"
+                app:layout_constraintTop_toBottomOf="custom_view"
+                app:layout_behavior=".repository.MyAppBarBehavior"
+                />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                app:layout_constraintGuide_percent = "0.8"
+                android:id="@+id/guideline"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintGuide_percent = "0.8"
+                android:id="@+id/guidelineVerticalEnd"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintGuide_percent = "0.2"
+                android:id="@+id/guidelineVerticalStart"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

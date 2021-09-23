@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -52,23 +53,23 @@
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button"
 
-            android:text="default"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="default" />
 
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:insetLeft="10dp"
-            android:text="outlined"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:insetLeft="10dp"
+            android:text="outlined" />
 
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:insetLeft="10dp"
-            android:text="outlined"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:insetLeft="10dp"
+            android:text="outlined" />
 
     </LinearLayout>
 
@@ -83,20 +84,21 @@
 
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-            android:text="Unelevated"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Unelevated" />
 
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:text="Unelevated"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Unelevated" />
+
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
-            android:text="Unelevated"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Unelevated" />
 
     </LinearLayout>
 
@@ -108,13 +110,14 @@
         android:layout_marginEnd="@dimen/endMarginRowContent"
         android:gravity="center"
         android:orientation="horizontal">
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardView"
-            android:layout_margin="20dp"
-            app:cardElevation="20dp"
-            app:cardCornerRadius="20dp"
             android:layout_width="match_parent"
-            android:layout_height="100dp"/>
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="20dp" />
 
     </LinearLayout>
 
@@ -123,15 +126,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/startMarginRowContent"
         android:layout_marginTop="@dimen/topMarginRowContent"
-        android:layout_marginBottom="@dimen/topMarginRowContent"
         android:layout_marginEnd="@dimen/endMarginRowContent"
+        android:layout_marginBottom="@dimen/topMarginRowContent"
         android:gravity="center"
         android:orientation="horizontal">
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:menu="@menu/menu_bottom_navigation"/>
+            app:menu="@menu/menu_bottom_navigation" />
     </LinearLayout>
 
 
@@ -141,25 +145,23 @@
         android:text="@string/label_inside_fragment"
         android:textSize="@dimen/labelTextSize" />
 
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-
-        <RadioGroup
-            android:id="@+id/radioGroup"
+        <RadioButton
+            android:id="@+id/btnThemeOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:text="@string/theme_one" />
 
-            <RadioButton
-                android:id="@+id/btnThemeOne"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/theme_one" />
-
-            <RadioButton
-                android:id="@+id/btnThemeSecond"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/theme_second" />
-        </RadioGroup>
+        <RadioButton
+            android:id="@+id/btnThemeSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/theme_second" />
+    </RadioGroup>
 
 </LinearLayout>

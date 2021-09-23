@@ -16,34 +16,33 @@
             android:layout_height="match_parent"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            app:layoutDescription="@xml/motion_scene"
-            >
+            app:layoutDescription="@xml/motion_scene">
+
             <ImageView
+                android:id="@+id/btnWiki"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/buttonWiki"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="@+id/input_layout"
-                app:layout_constraintTop_toTopOf="@+id/input_layout"
-                android:src="@drawable/ic_wikipedia"
-                android:layout_marginBottom="12dp"
                 android:layout_marginEnd="8dp"
-
-                />
-
+                android:layout_marginBottom="14dp"
+                android:src="@drawable/ic_wikipedia"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/input_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/input_layout" />
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/search_wiki"
+                app:counterEnabled="true"
+                app:counterMaxLength="20"
                 app:endIconCheckable="true"
                 app:endIconDrawable="@drawable/ic_wikipedia"
                 app:endIconMode="custom"
-                android:visibility="visible"
                 app:helperText="@string/wiki_helper_text"
-                app:layout_constraintBottom_toTopOf="@+id/custom_view"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintBottom_toTopOf="@+id/image_view"
+                app:layout_constraintStart_toEndOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/input_edit_text"
@@ -52,12 +51,12 @@
                     android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
             <com.example.desighkotlin.utils.CustomImageView
                 android:id="@+id/custom_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:visibility="invisible"
                 android:scaleType="centerInside"
                 android:contentDescription="@string/photo_of_the_day_stub"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -65,6 +64,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_no_photo_vector" />
+
 
 
         </androidx.constraintlayout.motion.widget.MotionLayout>

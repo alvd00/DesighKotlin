@@ -4,5 +4,6 @@
     <dimen name="startMarginRowContent">16dp</dimen>
     <dimen name="endMarginRowContent">16dp</dimen>
     <dimen name="labelTextSize">16sp</dimen>
+    <dimen name="bigTextSize">24sp</dimen>
 
 </resources>

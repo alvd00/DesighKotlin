@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import coil.api.load
 import com.example.desighkotlin.R
 import com.example.desighkotlin.databinding.FragmentPodBinding
+import com.example.desighkotlin.databinding.FragmentPodStartBinding
 import com.example.desighkotlin.planets.ApiActivity
 import com.example.desighkotlin.planets.ApiBottomActivity
 import com.example.desighkotlin.utils.ERROR_TEXT
@@ -30,8 +31,8 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 class PODFragment : Fragment() {
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
-    private var _binding: FragmentPodBinding? = null
-    val binding: FragmentPodBinding
+    private var _binding: FragmentPodStartBinding? = null
+    val binding: FragmentPodStartBinding
         get() {
             return _binding!!
         }
@@ -45,7 +46,7 @@ class PODFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentPodBinding.inflate(inflater)
+        _binding = FragmentPodStartBinding.inflate(inflater)
 
         super.onCreate(savedInstanceState)
         setActionBar()
