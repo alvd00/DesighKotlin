@@ -3,9 +3,9 @@
 
     <group android:checkableBehavior="none">
         <item
-            android:id="@+id/favorite_one"
+            android:id="@+id/firstScreen"
             android:icon="@drawable/ic_favourite_menu"
-            android:title="@string/favourite" />
+            android:title="@string/first_screen" />
         <item
             android:id="@+id/settings_one"
             android:icon="@drawable/ic_settings_menu"

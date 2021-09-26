@@ -117,13 +117,40 @@ class PODFragment : Fragment() {
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
     }
 
+    private fun setData(data: PODData.Success) {
+        val url = data.serverResponseData.hdurl
+        if (url.isNullOrEmpty()) {
+            val videoUrl = data.serverResponseData.url
+            videoUrl?.let { showAVideoUrl(it) }
+        } else {
+            binding.customView.load(url)
+        }
+    }
+
+
+    @SuppressLint("SetTextI18n")
+    private fun showAVideoUrl(videoUrl: String) = with(binding) {
+        customView.visibility = View.GONE
+        videoOfTheDay.visibility = View.VISIBLE
+        videoOfTheDay.text = "Сегодня у нас без картинки дня, но есть видео дня! " + "${videoUrl.toString()} \n кликни >ЗДЕСЬ< чтобы открыть в новом окне"
+        videoOfTheDay.setOnClickListener {
+            val i = Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse(videoUrl)
+            }
+            startActivity(i)
+        }
+    }
+
+
+
     private fun renderData(data: PODData) {
         when (data) {
             is PODData.Success -> {
-                binding.customView.load(data.serverResponseData.url) {
-                    error(R.drawable.ic_load_error_vector)
-                    placeholder(R.drawable.progress_image_animation)
-                }
+                setData(data)
+//                binding.customView.load(data.serverResponseData.url) {
+//                    error(R.drawable.ic_load_error_vector)
+//                    placeholder(R.drawable.progress_image_animation)
+//                }
 //                binding.descriptionPhoto.setText(data.serverResponseData.explanation)
             }
             is PODData.Loading -> {
@@ -136,6 +163,8 @@ class PODFragment : Fragment() {
             }
         }
     }
+
+
 
     override fun onDestroy() {
         super.onDestroy()

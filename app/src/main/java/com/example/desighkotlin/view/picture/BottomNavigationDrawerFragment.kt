@@ -1,5 +1,6 @@
 package com.example.desighkotlin.view.picture
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import com.example.desighkotlin.R
 import com.example.desighkotlin.databinding.BottomNavigationLayoutBinding
 import com.example.desighkotlin.utils.FAVORITE
 import com.example.desighkotlin.utils.SETTINGS
+import com.example.desighkotlin.view.animation.AnimationActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
@@ -31,7 +33,10 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.navigationView.setNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.favorite_one ->{
+                R.id.firstScreen ->{
+                    activity?.let {
+                        startActivity(Intent(it, AnimationActivity::class.java))
+                    }
                     Toast.makeText(requireContext(), FAVORITE, Toast.LENGTH_SHORT).show()
                 }
                 R.id.settings_one ->{

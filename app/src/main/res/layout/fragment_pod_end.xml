@@ -67,6 +67,21 @@
                 app:srcCompat="@drawable/ic_no_photo_vector" />
 
 
+            <TextView
+                android:id="@+id/videoOfTheDay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:scaleType="centerInside"
+                android:contentDescription="@string/photo_of_the_day_stub"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_no_photo_vector" />
+
+
         </androidx.constraintlayout.motion.widget.MotionLayout>
     </androidx.core.widget.NestedScrollView>
 

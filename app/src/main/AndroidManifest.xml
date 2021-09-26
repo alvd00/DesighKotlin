@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.desighkotlin">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,17 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesighKotlin.myTheme">
         <activity
+            android:name=".view.animation.AnimationActivity"
+            android:exported="true" />
+        <activity
             android:name=".planets.ApiActivity"
-            android:exported="true">
-
-        </activity>
-
+            android:exported="true"></activity>
         <activity
             android:name=".planets.ApiBottomActivity"
-            android:exported="true">
-
-        </activity>
-
+            android:exported="true"></activity>
         <activity
             android:name=".view.MainActivity"
             android:exported="true">

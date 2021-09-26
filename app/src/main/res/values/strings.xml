@@ -15,5 +15,8 @@
     <string name="mars">Марс</string>
     <string name="earth">Земля</string>
     <string name="song">All i need is a love tonight</string>
+    <string name="first_screen">Первый экран</string>
+    <string name="animation">Анимация</string>
+    <string name="change_focus">Изменить размер</string>
 
 </resources>
