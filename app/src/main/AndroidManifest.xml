@@ -12,14 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesighKotlin.myTheme">
         <activity
-            android:name=".view.animation.AnimationActivity"
+            android:name=".view.animation.SecondAnimationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.animation.FirstAnimationActivity"
             android:exported="true" />
         <activity
             android:name=".planets.ApiActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".planets.ApiBottomActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".view.MainActivity"
             android:exported="true">

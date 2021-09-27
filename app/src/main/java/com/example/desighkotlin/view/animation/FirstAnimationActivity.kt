@@ -7,15 +7,17 @@ import android.transition.*
 import android.util.Log
 import android.view.Gravity
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.ImageView
-import android.widget.Toast
+import android.widget.LinearLayout
 import com.example.desighkotlin.R
 import com.example.desighkotlin.databinding.ActivityAnimationBinding
 
-class AnimationActivity : AppCompatActivity() {
+class FirstAnimationActivity : AppCompatActivity() {
     lateinit var binding: ActivityAnimationBinding
     private var imageVisible = true
     private var isExpended = false
+    var isRigthAnimation = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,21 +30,33 @@ class AnimationActivity : AppCompatActivity() {
         val planetsList = listOf(earth, mars, venus)
 
         var clickerFlag = 0
+
         binding.animationButton.setOnClickListener {
+            isRigthAnimation = !isRigthAnimation
+            val rightChangeBounds = ChangeBounds()
+            rightChangeBounds.setPathMotion(ArcMotion())
+            rightChangeBounds.duration = 1000
+            TransitionManager.beginDelayedTransition(binding.transitionContainer, rightChangeBounds)
+
+            val buttonParams = binding.animationButton.layoutParams as FrameLayout.LayoutParams
+            if (isRigthAnimation) {
+                buttonParams.gravity = Gravity.END or Gravity.BOTTOM
+            } else {
+                buttonParams.gravity = Gravity.CENTER or Gravity.CENTER
+            }
+            binding.animationButton.layoutParams = buttonParams
+
             TransitionManager.beginDelayedTransition(
                 binding.transitionContainer,
                 Slide(Gravity.TOP)
             )
             imageVisible = !imageVisible
             if (clickerFlag % 2 == 0) {
-                Toast.makeText(applicationContext, "${clickerFlag}" + "number", Toast.LENGTH_SHORT)
-                Log.d("YYYY", "${clickerFlag}")
                 binding.randomPlanet.setImageResource(planetsList.random())
             }
             clickerFlag++
             binding.randomPlanet.visibility = if (imageVisible) View.GONE else View.VISIBLE
         }
-
         binding.randomPlanet.setOnClickListener {
             isExpended = !isExpended
             val set = TransitionSet()

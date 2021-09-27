@@ -3,13 +3,13 @@
 
     <group android:checkableBehavior="none">
         <item
-            android:id="@+id/firstScreen"
+            android:id="@+id/firstScreenAnimation"
             android:icon="@drawable/ic_favourite_menu"
             android:title="@string/first_screen" />
         <item
-            android:id="@+id/settings_one"
+            android:id="@+id/secondScreenAnimation"
             android:icon="@drawable/ic_settings_menu"
-            android:title="@string/settings" />
+            android:title="@string/second_screen" />
     </group>
 
 </menu>

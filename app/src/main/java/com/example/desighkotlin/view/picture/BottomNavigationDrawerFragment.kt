@@ -2,7 +2,6 @@ package com.example.desighkotlin.view.picture
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,8 @@ import com.example.desighkotlin.R
 import com.example.desighkotlin.databinding.BottomNavigationLayoutBinding
 import com.example.desighkotlin.utils.FAVORITE
 import com.example.desighkotlin.utils.SETTINGS
-import com.example.desighkotlin.view.animation.AnimationActivity
+import com.example.desighkotlin.view.animation.FirstAnimationActivity
+import com.example.desighkotlin.view.animation.SecondAnimationActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
@@ -33,14 +33,16 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.navigationView.setNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.firstScreen ->{
+                R.id.firstScreenAnimation ->{
                     activity?.let {
-                        startActivity(Intent(it, AnimationActivity::class.java))
+                        startActivity(Intent(it, FirstAnimationActivity::class.java))
                     }
                     Toast.makeText(requireContext(), FAVORITE, Toast.LENGTH_SHORT).show()
                 }
-                R.id.settings_one ->{
-                    Log.d("SETTT", "YEEEES")
+                R.id.secondScreenAnimation ->{
+                    activity?.let {
+                        startActivity(Intent(it, SecondAnimationActivity::class.java))
+                    }
                     Toast.makeText(context, SETTINGS, Toast.LENGTH_LONG).show()
                 }
             }

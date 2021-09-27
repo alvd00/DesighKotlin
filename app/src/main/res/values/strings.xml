@@ -18,5 +18,6 @@
     <string name="first_screen">Первый экран</string>
     <string name="animation">Анимация</string>
     <string name="change_focus">Изменить размер</string>
+    <string name="second_screen">Второй экран</string>
 
 </resources>
