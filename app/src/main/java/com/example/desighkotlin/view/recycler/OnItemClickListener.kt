@@ -1,5 +1,5 @@
 package com.example.desighkotlin.view.recycler
 
-interface OnItemListClickListener {
+interface OnItemClickListener {
     fun onItemClick(data : Data)
 }
