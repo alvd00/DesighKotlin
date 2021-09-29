@@ -3,16 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginTop="@dimen/small_margin"
     android:id="@+id/itemDealList">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/marsImageView"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:id="@+id/dealImageView"
+        android:layout_width="61dp"
+        android:layout_height="66dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_earth" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dealDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+       android:text="ко́смос (др.-греч. κόσμος — «упорядоченность», «порядок») — относительно пустые участки Вселенной, которые лежат вне границ атмосфер небесных тел. Космос не является абсолютно пустым пространством: в нём есть, хотя и с очень низкой плотностью, межзвёздное вещество (преимущественно молекулы водорода), кислород в малых количествах (остаток после взрыва звезды), космические лучи и электромагнитное излучение, а также гипотетическая тёмная материя."
+        android:textColor="#000"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dealImageView"
+        tools:visibility="visible"
+        />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_marginStart="@dimen/small_margin"
         android:id="@+id/descriptionTextView"
@@ -21,9 +37,9 @@
         android:hint="@string/write_new_deal"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/marsImageView"
-        app:layout_constraintStart_toEndOf="@+id/marsImageView"
-        app:layout_constraintTop_toTopOf="@+id/marsImageView" />
+        app:layout_constraintBottom_toBottomOf="@+id/dealImageView"
+        app:layout_constraintStart_toEndOf="@+id/dealImageView"
+        app:layout_constraintTop_toTopOf="@+id/dealImageView" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/moveItemUp"
@@ -66,13 +82,15 @@
         android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/addItemImageView"
-        app:srcCompat="@drawable/ic_archive" />
+        app:srcCompat="@drawable/ic_archive"
+        android:layout_marginBottom="@dimen/default_margin"/>
 
     <View
         android:layout_marginTop="@dimen/large_margin"
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="@color/light_blue"
-        app:layout_constraintBottom_toBottomOf="@+id/removeItemImageView"
+        android:paddingBottom="@dimen/default_margin"
+        app:layout_constraintBottom_toBottomOf="@+id/dealDescriptionTextView"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

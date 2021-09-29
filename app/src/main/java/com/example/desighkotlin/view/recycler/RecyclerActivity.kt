@@ -13,14 +13,15 @@ class RecyclerActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        val data: MutableList<Data> = ArrayList()
+        val data:MutableList<Pair<Data,Boolean>> = ArrayList()
         repeat(10) {
             if (it % 2 == 0) {
-                data.add(Data("Deal"))
+               // data.add(Data("Deal"))
             }
         }
-        data.add(0, Data("Header"))
+        data.add(Pair(Data("Deal",""),false))
 
+        data.add(0,Pair(Data("Header"),false))
 
         val adapter = RecyclerActivityAdapter(
             object : OnItemClickListener {

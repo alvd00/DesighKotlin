@@ -9,7 +9,7 @@ import com.example.desighkotlin.databinding.ActivityRecyclerDealsItemBinding
 
 class RecyclerActivityAdapter(
     private var onListItemClickListener: OnItemClickListener,
-    private var data: MutableList<Data>
+    private var data: MutableList<Pair<Data, Boolean>>
 ) : RecyclerView.Adapter<BaseViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
@@ -43,7 +43,7 @@ class RecyclerActivityAdapter(
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
         when (getItemViewType(position)) {
             TYPE_DEAL -> {
-                (holder as DealViewHolder).bind(data[position])
+                holder.bind(data[position])
             }
             //Если добавляю, то вылетает, почему? FIXME
 //            TYPE_HEADER->{
@@ -58,19 +58,28 @@ class RecyclerActivityAdapter(
     }
 
     inner class DealViewHolder(view: View) : BaseViewHolder(view) {
-        override fun bind(data: Data) {
+        override fun bind(pair: Pair<Data,Boolean>){
             ActivityRecyclerDealsItemBinding.bind(itemView).apply {
-                descriptionTextView.text = data.someDescription
+                descriptionTextView.text = pair.first.someDescription
                 itemDealList.setOnClickListener {
-                    onListItemClickListener.onItemClick(data)
+                    onListItemClickListener.onItemClick(pair.first)
                 }
                 addItemImageView.setOnClickListener { addItem() }
                 removeItemImageView.setOnClickListener { removeItem() }
                 moveItemUp.setOnClickListener { moveUp() }
                 moveItemDown.setOnClickListener { moveDown() }
+                descriptionTextView.setOnClickListener { toggleText() }
+                dealDescriptionTextView.visibility =  if(pair.second) View.VISIBLE else View.GONE
             }
         }
 
+
+        private fun toggleText(){
+            data[layoutPosition] = data[layoutPosition].let{
+                it.first to !it.second
+            }
+            notifyItemChanged(layoutPosition)
+        }
 
         private fun moveUp() {
             layoutPosition.takeIf { it > 1 }?.also {
@@ -91,7 +100,7 @@ class RecyclerActivityAdapter(
         }
 
         private fun addItem() {
-            data.add(layoutPosition, generateItem())
+            data.add(layoutPosition, Pair(generateItem(), false))
             notifyItemInserted(layoutPosition)
         }
 
@@ -103,7 +112,7 @@ class RecyclerActivityAdapter(
 
 
     fun appendItem() {
-        data.add(generateItem())
+        data.add(Pair(generateItem(),false))
         notifyItemInserted(itemCount - 1)
     }
 
@@ -111,10 +120,10 @@ class RecyclerActivityAdapter(
     private fun generateItem() = Data("Deal", "")
 
     inner class HeaderViewHolder(view: View) : BaseViewHolder(view) {
-        override fun bind(data: Data) {
+        override fun bind(pair: Pair<Data,Boolean>) {
             ActivityRecyclerDealsHeaderBinding.bind(itemView).apply {
                 root.setOnClickListener {
-                    onListItemClickListener.onItemClick(data)
+                    onListItemClickListener.onItemClick(pair.first)
                 }
             }
         }
