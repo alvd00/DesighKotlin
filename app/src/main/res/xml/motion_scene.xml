@@ -13,7 +13,7 @@
         app:constraintSetEnd="@layout/fragment_pod_start"
         app:constraintSetStart="@layout/fragment_pod_end"
         app:duration="1000">
-        <OnClick app:targetId="@+id/image_view"/>
+        <OnClick app:targetId="@+id/custom_view"/>
     </Transition>
 
 </MotionScene>

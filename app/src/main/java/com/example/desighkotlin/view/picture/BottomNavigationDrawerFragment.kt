@@ -12,6 +12,7 @@ import com.example.desighkotlin.utils.FAVORITE
 import com.example.desighkotlin.utils.SETTINGS
 import com.example.desighkotlin.view.animation.FirstAnimationActivity
 import com.example.desighkotlin.view.animation.SecondAnimationActivity
+import com.example.desighkotlin.view.recycler.RecyclerActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
@@ -42,6 +43,12 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
                 R.id.secondScreenAnimation ->{
                     activity?.let {
                         startActivity(Intent(it, SecondAnimationActivity::class.java))
+                    }
+                    Toast.makeText(context, SETTINGS, Toast.LENGTH_LONG).show()
+                }
+                R.id.recycle ->{
+                    activity?.let {
+                        startActivity(Intent(it, RecyclerActivity::class.java))
                     }
                     Toast.makeText(context, SETTINGS, Toast.LENGTH_LONG).show()
                 }

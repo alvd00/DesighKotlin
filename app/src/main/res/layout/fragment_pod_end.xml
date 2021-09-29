@@ -37,6 +37,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/search_wiki"
                 app:endIconCheckable="true"
+                android:visibility="visible"
                 app:endIconDrawable="@drawable/ic_wikipedia"
                 app:endIconMode="custom"
                 app:helperText="@string/wiki_helper_text"

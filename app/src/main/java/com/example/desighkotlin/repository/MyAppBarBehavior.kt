@@ -54,7 +54,7 @@ class MyAppBarBehavior @JvmOverloads constructor(
         axes: Int,
         type: Int
     ): Boolean {
-        (child as TextView).textSize  = 100f
+        (child as TextView).textSize  = 10f
         child.requestLayout()
         return false
         return super.onStartNestedScroll(

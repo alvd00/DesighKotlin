@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DesighKotlin.myTheme">
         <activity
+            android:name=".view.recycler.RecyclerActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.animation.SecondAnimationActivity"
             android:exported="true" />
         <activity

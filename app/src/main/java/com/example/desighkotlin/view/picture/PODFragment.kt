@@ -13,7 +13,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import coil.api.load
 import com.example.desighkotlin.R
-import com.example.desighkotlin.databinding.FragmentPodBinding
 import com.example.desighkotlin.databinding.FragmentPodStartBinding
 import com.example.desighkotlin.planets.ApiActivity
 import com.example.desighkotlin.planets.ApiBottomActivity
