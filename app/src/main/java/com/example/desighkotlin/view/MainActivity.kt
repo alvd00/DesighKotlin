@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //setTheme(R.style.Splash)
         setTheme(getRealStyle(getCurrentTheme()))
         setContentView(R.layout.activity_main)
         if (savedInstanceState == null) {

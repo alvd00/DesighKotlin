@@ -30,7 +30,7 @@ class RecyclerActivityAdapter(
                         parent,
                         false
                     )
-                DealViewHolder(binding.root)
+                HeaderViewHolder(binding.root)
             }
         }
     }

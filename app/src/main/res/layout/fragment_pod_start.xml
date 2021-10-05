@@ -119,6 +119,7 @@
         android:layout_height="wrap_content"
         android:text="@string/song"
         android:textSize="@dimen/labelTextSize"
+        android:visibility="gone"
         android:id="@+id/song"
         android:layout_gravity="center"
         android:textStyle="bold"

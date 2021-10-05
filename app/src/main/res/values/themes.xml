@@ -24,6 +24,10 @@
         <item name="endIconDrawable">@drawable/ic_wikipedia</item>
         <item name="textInputStyle">@style/CustomOutlinedBox.</item>
     </style>
+
+    <style name="Theme.DesighKotlin.myTheme.Splash">
+        <item name="android:windowBackground">@drawable/splash_background_drawable</item>
+    </style>
     
     <style name="CustomOutlinedBox." parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
@@ -38,7 +42,6 @@
     </style>
 
     <style name="Theme.DesighKotlin.myTheme" parent="Theme.DesighKotlin">
-
         <item name="cornerRadius">30dp</item>
         <item name="background">@drawable/universe</item>
         <item name="boxStrokeColor">@color/light_blue</item>

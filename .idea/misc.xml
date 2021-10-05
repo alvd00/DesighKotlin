@@ -13,6 +13,7 @@
         <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/drawable/ic_space_icon_foreground.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/drawable/progress_image_animation.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/drawable/splash_background_deawable.xml" value="0.2703125" />
         <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/drawable/swipe_indicator_active.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/drawable/swipe_indicator_passive.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/layout/activity_animation.xml" value="0.17552083333333332" />
@@ -23,7 +24,12 @@
         <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/layout/activity_api_tablayout_mars.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/layout/activity_api_tablayout_venus.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/layout/activity_main.xml" value="0.18125" />
+        <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/layout/activity_recycler.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/layout/activity_recycler_deals.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/layout/activity_recycler_deals_header.xml" value="0.115625" />
+        <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/layout/activity_recycler_deals_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/layout/activity_second_animation.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/layout/activity_splash.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/layout/bottom_navigation_layout.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.2" />
         <entry key="..\:/Users/vdv4/Desktop/Android/Projects/GeekBrains/Design/app/src/main/res/layout/fragment_chips.xml" value="0.13020833333333334" />
